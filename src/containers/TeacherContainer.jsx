@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { sendData } from '../lib/peer';
+import $ from '../lib/shims/jquery';
+
+import style from '';
 
 class TeacherContainer extends Component {
   componentDidMount() {
@@ -21,13 +24,26 @@ class TeacherContainer extends Component {
     console.log("send finished!");
   }
 
+  animatingTexts() {
+    let now = new Date($.now());
+    return this.props.teacher.textQueue.filter((text) => text.isExpired(now));
+  }
+
   render() {
     return (
       <div>
         <div onClick={this.onClickhoge.bind(this)}>hogehoge</div>
         {this.props.teacher.iconQueue}
-        {this.props.teacher.textQueue}
+        {this.animatingTexts().map((text) => this.renderText(text))}
         {this.renderSlide()}
+      </div>
+    )
+  }
+
+  renderText(text) {
+    return (
+      <div key={`text-${text.id}`}>
+        {text.text}
       </div>
     )
   }

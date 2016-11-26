@@ -1,3 +1,5 @@
+import Text from '../records/text';
+
 const Actions = {
   RECEIVE_ICON: 'teacher/recieve_icon',
   RECEIVE_TEXT: 'teacher/recieve_text',
@@ -26,6 +28,6 @@ function receiveIcon(value) {
 function receiveText(text) {
   return {
     type: Actions.RECEIVE_TEXT,
-    text: text,
+    text: Text.fromJS(text),
   }
 }
