@@ -1,4 +1,5 @@
-import Peer from 'peerjs';
+// import Peer from 'peerjs';
+import Peer from './shims/peer';
 
 let peerId = "teacher";
 let API_KEY = "e16bc721-d566-47ea-9de8-4a92bc8248c6"; // 悪用しないでね
