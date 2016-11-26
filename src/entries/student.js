@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 
   var start;
-  var morse = '';
+  var morseMess = '';
   var lastTime;
 
 
@@ -44,19 +44,26 @@ $(document).ready(function () {
 
     function reset() {
       if (lastTime == keepLastTime) {
-        console.log(morse);
-        send(morse);
-        morse = '';
+        console.log(morseMess);
+        send(morseMess);
+        morseMess = '';
         lastTime = 0;
       }
     }
-
-    setTimeout(reset, 1000);
+    
+    function space() {
+        if(lastTime == keepLastTime) {
+            morseMess = morseMess+' ';
+        }
+    }
+    setTimeout(space, 600);
+    setTimeout(reset, 2000);
   }
 
   function send(morseText) {
-    console.log('send', morseText);
-    connection.send(morseText);
+    var text = morse.decode(morseText);
+    console.log(text);
+    connection.send(text);
   }
 
   function keydown() {
@@ -66,10 +73,10 @@ $(document).ready(function () {
   function keyup() {
     let stop = new Date(jQuery.now());
     let check = stop - start;
-    if (check < 90) {
-      morse = morse + '.';
+    if (check < 80) {
+      morseMess = morseMess + '.';
     } else {
-      morse = morse + '-';
+      morseMess = morseMess + '-';
     }
     //console.log(morse);
     registerOnFinish();
