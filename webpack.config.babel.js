@@ -7,7 +7,7 @@ export const serverURI = `http://localhost:${serverPort}`
 
 export default {
   entry: {
-    issue: './src/entries/issue.js',
+    teacher: './src/entries/teacher.js',
   },
 
   output: {
