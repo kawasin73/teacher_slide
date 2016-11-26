@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { sendData } from '../lib/peer';
 import $ from '../lib/shims/jquery';
 
+import Cambus from '../components/Cambus';
 
 class TeacherContainer extends Component {
   componentDidMount() {
@@ -32,28 +33,12 @@ class TeacherContainer extends Component {
     return (
       <div>
         <div onClick={this.onClickhoge.bind(this)}>hogehoge</div>
-        {this.props.teacher.iconQueue}
-        {this.animatingTexts().map((text) => this.renderText(text))}
-        {this.renderSlide()}
+        <Cambus
+          icons={this.props.teacher.iconQueue}
+          texts={this.animatingTexts()}
+        />
       </div>
     )
-  }
-
-  renderText(text) {
-    return (
-      <div key={`text-${text.id}`}>
-        {text.text}
-      </div>
-    )
-  }
-
-  renderSlide() {
-    let height = window.screen.height;
-    let html = `<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQiTsrz3u4rkRBaORtaba5m0riMujZBm8h8Coph83Jz7bF0QSkq-zxlGqwXPt5j_7bfOJZt3b4xwLBU/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="${height}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>`;
-    let htmlObject = { __html: html };
-    return (
-      <div dangerouslySetInnerHTML={htmlObject}/>
-    );
   }
 }
 
