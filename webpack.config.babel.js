@@ -46,4 +46,8 @@ export default {
       },
     ],
   },
+
+  node: {
+    fs: "empty"
+  },
 };

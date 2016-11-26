@@ -1,3 +1,4 @@
+import MorseJp from 'morse-jp';
 import $ from '../lib/shims/jquery';
 import Peer from '../lib/shims/peer';
 
