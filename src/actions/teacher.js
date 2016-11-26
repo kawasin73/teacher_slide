@@ -1,4 +1,5 @@
 import Text from '../records/text';
+import Icon from '../records/icon';
 
 const Actions = {
   RECEIVE_ICON: 'teacher/recieve_icon',
@@ -21,7 +22,7 @@ export function receiveData(data) {
 function receiveIcon(value) {
   return {
     type: Actions.RECEIVE_ICON,
-    value: value,
+    value: Icon.fromJS(value),
   }
 }
 

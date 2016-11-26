@@ -1,10 +1,10 @@
 import { List, Record } from 'immutable';
 import $ from '../lib/shims/jquery';
 
-const _Text = Record({
+const _Icon = Record({
   id: null,
-  text: '',
-  top: null,
+  value: '',
+  top: 0,
   addedTime: null,
   animationTime: null,
 });
@@ -24,11 +24,11 @@ function randomAnimation() {
   return Math.random() * 10 + 4;
 }
 
-export default class Text extends _Text {
-  static fromJS(text) {
+export default class Icon extends _Icon {
+  static fromJS(value) {
     return (new this).merge({
       id: countId(),
-      text: text,
+      value: value,
       top: top(),
       addedTime: new Date($.now()),
       animationTime: randomAnimation(),

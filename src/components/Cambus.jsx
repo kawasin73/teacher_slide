@@ -11,7 +11,7 @@ class Cambus extends Component {
   render() {
     return (
       <div styleName="base">
-        {this.props.icons}
+        {this.props.icons.map((icon) => this.renderIcon(icon))}
         {this.props.texts.map((text) => this.renderText(text))}
         {this.renderSlide()}
       </div>
@@ -19,9 +19,26 @@ class Cambus extends Component {
   }
 
   renderText(text) {
+    let style = {
+      top: text.top,
+      animationDuration: `${text.animationTime}s`,
+    };
+    console.log('style', style);
     return (
-      <div key={`text-${text.id}`}>
+      <div key={`text-${text.id}`} styleName="text" style={style}>
         {text.text}
+      </div>
+    )
+  }
+
+  renderIcon(icon) {
+    let style = {
+      top: icon.top,
+      animationDuration: `${icon.animationTime}s`,
+    };
+    return (
+      <div key={`icon-${icon.id}`} styleName="icon" style={style}>
+        {icon.value}
       </div>
     )
   }
