@@ -6,8 +6,16 @@ const root = path.join(__dirname, 'public')
 
 app.use('/', express.static(root))
 
+app.get('student.html', (req, res, _next) => {
+  res.sendFile('student.html', { root })
+});
+
+app.get('send_peer.js', (req, res, _next) => {
+  res.sendFile('send_peer.js', { root })
+});
+
 app.get('*', (req, res, _next) => {
   res.sendFile('index.html', { root })
-})
+});
 
 app.listen(process.env.PORT || 8000)
