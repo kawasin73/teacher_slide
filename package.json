@@ -15,7 +15,7 @@
     "immutable": "^3.8.1",
     "jquery": "^2.2.4",
     "lodash": "^4.13.1",
-    "morse-jp": "0.0.1",
+    "morse": "^0.1.0",
     "peerjs": "^0.3.14",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",

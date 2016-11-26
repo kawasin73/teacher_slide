@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
 import { sendData } from '../lib/peer';
 import $ from '../lib/shims/jquery';
 
-import style from '';
 
 class TeacherContainer extends Component {
   componentDidMount() {
