@@ -1,0 +1,3 @@
+let $ = window.$;
+
+export default $;
