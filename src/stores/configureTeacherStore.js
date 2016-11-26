@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import reducer from '../reducers/issueApp'
+import reducer from '../reducers/teacherApp'
 
 
 export default function configureStore(_initialData) {
@@ -13,8 +13,8 @@ export default function configureStore(_initialData) {
     )
   )
 
-  module.hot.accept('../reducers/issueApp', () => {
-    store.replaceReducer(require('../reducers/issueApp').default)
+  module.hot.accept('../reducers/teacherApp', () => {
+    store.replaceReducer(require('../reducers/teacherApp').default)
   })
 
   return store

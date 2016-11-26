@@ -9,11 +9,8 @@ import _ from 'lodash'
 import 'babel-polyfill'
 
 
-import IssueContainer from '../containers/IssueContainer'
-import IssueListContainer from '../containers/IssueListContainer'
-import IssueDetailContainer from '../containers/IssueDetailContainer'
-import IssueNewContainer from '../containers/IssueNewContainer'
-import configureStore from '../stores/configureIssueStore'
+import TeacherContainer from '../containers/TeacherContainer'
+import configureStore from '../stores/configureTeacherStore'
 
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
@@ -21,11 +18,7 @@ const history = syncHistoryWithStore(browserHistory, store)
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={IssueContainer}>
-        <IndexRoute component={IssueListContainer} />
-        <Route path="/new" component={IssueNewContainer} />
-        <Route path="/:id" component={IssueDetailContainer} />
-      </Route>
+      <Route path="/" component={TeacherContainer}/>
     </Router>
   </Provider>,
   document.getElementById('content')
