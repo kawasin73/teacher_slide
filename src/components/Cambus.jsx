@@ -9,13 +9,23 @@ class Cambus extends Component {
   }
 
   render() {
+    let queues;
+    if (this.props.enabled) {
+      queues = (
+        <div>
+          {this.props.icons.map((icon) => this.renderIcon(icon))}
+          {this.props.texts.map((text) => this.renderText(text))}
+        </div>
+      );
+    } else {
+      queues = (null);
+    }
     return (
       <div styleName="base">
-        {this.props.icons.map((icon) => this.renderIcon(icon))}
-        {this.props.texts.map((text) => this.renderText(text))}
+        {queues}
         {this.renderSlide()}
       </div>
-    )
+    );
   }
 
   renderText(text) {
@@ -28,7 +38,7 @@ class Cambus extends Component {
       <div key={`text-${text.id}`} styleName="text" style={style}>
         {text.text}
       </div>
-    )
+    );
   }
 
   renderIcon(icon) {
@@ -40,7 +50,7 @@ class Cambus extends Component {
       <div key={`icon-${icon.id}`} styleName="icon" style={style}>
         {icon.value}
       </div>
-    )
+    );
   }
 
   renderSlide() {

@@ -8,7 +8,7 @@ function textQueue(state = new List(), action) {
     case TeacherActions.RECEIVE_TEXT:
       return state.push(action.text);
     default:
-      break // do nothing
+      break; // do nothing
   }
   return state;
 }
@@ -18,12 +18,23 @@ function iconQueue(state = new List(), action) {
     case TeacherActions.RECEIVE_ICON:
       return state.push(action.value);
     default:
-      break // do nothing
+      break; // do nothing
   }
   return state
+}
+
+function enabledFlow(state = true, action) {
+  switch (action.type) {
+    case TeacherActions.ENABLE_FLOW:
+      return action.value;
+    default:
+      break; //
+  }
+  return state;
 }
 
 export default combineReducers({
   textQueue,
   iconQueue,
+  enabledFlow,
 })

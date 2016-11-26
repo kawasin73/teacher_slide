@@ -8,8 +8,10 @@ import thunk from 'redux-thunk'
 import _ from 'lodash'
 import 'babel-polyfill'
 
+import $ from '../lib/shims/jquery';
+
 import { startReceive } from '../lib/peer';
-import { receiveData } from '../actions/teacher';
+import { receiveData, enableFlow } from '../actions/teacher';
 
 import TeacherContainer from '../containers/TeacherContainer'
 import configureStore from '../stores/configureTeacherStore'
@@ -19,6 +21,24 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 startReceive((data) => {
   store.dispatch(receiveData(data))
+});
+
+let KEY1 = 49;
+let KEY2 = 50;
+
+$(document).ready(() => {
+  $('body').keypress((e) => {
+    switch (e.which) {
+      case KEY1:
+        store.dispatch(enableFlow(true));
+        return;
+      case KEY2:
+        store.dispatch(enableFlow(false));
+        return;
+      default:
+        break; // do nothing
+    }
+  })
 });
 
 ReactDOM.render(

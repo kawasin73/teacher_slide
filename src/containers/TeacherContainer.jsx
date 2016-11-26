@@ -28,6 +28,7 @@ class TeacherContainer extends Component {
         <Cambus
           icons={this.animationIcons()}
           texts={this.animatingTexts()}
+          enabled={this.props.teacher.enabledFlow}
         />
       </div>
     )

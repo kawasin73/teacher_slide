@@ -4,6 +4,7 @@ import Icon from '../records/icon';
 const Actions = {
   RECEIVE_ICON: 'teacher/recieve_icon',
   RECEIVE_TEXT: 'teacher/recieve_text',
+  ENABLE_FLOW: 'teacher/enable_flow',
 };
 
 export default Actions;
@@ -16,6 +17,13 @@ export function receiveData(data) {
     case 1:
       // text
       return receiveText(data.value);
+  }
+}
+
+export function enableFlow(enabled) {
+  return {
+    type: Actions.ENABLE_FLOW,
+    value: enabled,
   }
 }
 
