@@ -3,24 +3,28 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import {sendData} from '../lib/peer';
+import { sendData } from '../lib/peer';
 
 class TeacherContainer extends Component {
   componentDidMount() {
-    sendData({type: 0, value: 0});
-    sendData({type: 0, value: 1});
-    sendData({type: 1, value: "hei"});
-    sendData({type: 1, value: "hoi"});
-    console.log("send finished!");
   }
 
   resizeSlide() {
     // TODO: resize
   }
 
+  onClickhoge(e) {
+    sendData({ type: 0, value: 0 });
+    sendData({ type: 0, value: 1 });
+    sendData({ type: 1, value: "hei" });
+    sendData({ type: 1, value: "hoi" });
+    console.log("send finished!");
+  }
+
   render() {
     return (
       <div>
+        <div onClick={this.onClickhoge.bind(this)}>hogehoge</div>
         {this.props.teacher.iconQueue}
         {this.props.teacher.textQueue}
         {this.renderSlide()}
