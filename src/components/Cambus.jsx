@@ -44,7 +44,7 @@ class Cambus extends Component {
   }
 
   renderSlide() {
-    let height = window.screen.height;
+    let height = window.outerHeight;
     let html = `<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQiTsrz3u4rkRBaORtaba5m0riMujZBm8h8Coph83Jz7bF0QSkq-zxlGqwXPt5j_7bfOJZt3b4xwLBU/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="${height}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>`;
     let htmlObject = { __html: html };
     return (

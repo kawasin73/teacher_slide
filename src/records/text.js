@@ -17,7 +17,7 @@ function countId() {
 }
 
 function top() {
-  return Math.random() * window.screen.height;
+  return Math.random() * window.outerHeight;
 }
 
 function randomAnimation() {

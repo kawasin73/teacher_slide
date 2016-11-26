@@ -12,14 +12,6 @@ class TeacherContainer extends Component {
   componentDidMount() {
   }
 
-  onClickhoge(e) {
-    sendData({ type: 0, value: 0 });
-    sendData({ type: 0, value: 1 });
-    sendData({ type: 1, value: "hei" });
-    sendData({ type: 1, value: "hoi" });
-    console.log("send finished!");
-  }
-
   animationIcons() {
     let now = new Date($.now());
     return this.props.teacher.iconQueue.filter((icon) => icon.isExpired(now));
@@ -33,7 +25,6 @@ class TeacherContainer extends Component {
   render() {
     return (
       <div>
-        <div onClick={this.onClickhoge.bind(this)}>hogehoge</div>
         <Cambus
           icons={this.animationIcons()}
           texts={this.animatingTexts()}
