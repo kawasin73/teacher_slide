@@ -39,6 +39,10 @@ export default class Icon extends _Icon {
     return date - this.addedTime < this.animationTime * 1000;
   }
 
+  inTime(date) {
+    return date - this.addedTime < 60 * 1000;
+  }
+
   text() {
     switch (this.value) {
       case '0':

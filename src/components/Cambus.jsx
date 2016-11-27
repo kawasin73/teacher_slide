@@ -13,6 +13,12 @@ class Cambus extends Component {
     if (this.props.enabled) {
       queues = (
         <div>
+          <div styleName="counter_list">
+            <span styleName="counter">いいね： {this.props.goodCount}</span>
+            <span styleName="counter">つまらない： {this.props.boringCount}</span>
+            <span styleName="counter">わかる： {this.props.understandCount}</span>
+            <span styleName="counter">わからない： {this.props.noUnderstandCount}</span>
+          </div>
           {this.props.icons.map((icon) => this.renderIcon(icon))}
           {this.props.texts.map((text) => this.renderText(text))}
         </div>

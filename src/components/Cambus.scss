@@ -21,6 +21,18 @@
   composes: floating;
 }
 
+.counter_list {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.counter {
+  float: left;
+  margin: 0 20px;
+  font-size: 20px;
+}
+
 @keyframes animation-transform {
   from{
     transform: translateX(0);

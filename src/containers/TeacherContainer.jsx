@@ -45,12 +45,37 @@ class TeacherContainer extends Component {
     });
   }
 
+  inTimeIcons() {
+    let now = new Date($.now());
+    return this.props.teacher.iconQueue.filter((icon) => icon.inTime(now));
+  }
+
+  goodCount() {
+    return this.inTimeIcons().filter((icon) => icon.value === '0').count();
+  }
+
+  boringCount() {
+    return this.inTimeIcons().filter((icon) => icon.value === '1').count();
+  }
+
+  understandCount() {
+    return this.inTimeIcons().filter((icon) => icon.value === '2').count();
+  }
+
+  noUnderstandCount() {
+    return this.inTimeIcons().filter((icon) => icon.value === '3').count();
+  }
+
   render() {
     return (
       <div>
         <Cambus
           icons={this.animationIcons()}
           texts={this.animatingTexts()}
+          goodCount={this.goodCount()}
+          boringCount={this.boringCount()}
+          understandCount={this.understandCount()}
+          noUnderstandCount={this.noUnderstandCount()}
           enabled={this.props.teacher.enabledFlow}
         />
       </div>
