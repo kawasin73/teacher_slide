@@ -38,6 +38,7 @@ class Cambus extends Component {
     let style = {
       top: text.top,
       animationDuration: `${text.animationTime}s`,
+      fontSize: `${text.fontSize}px`,
     };
     console.log('style', style);
     return (
@@ -51,6 +52,7 @@ class Cambus extends Component {
     let style = {
       top: icon.top,
       animationDuration: `${icon.animationTime}s`,
+      fontSize: `${icon.fontSize}px`,
     };
     return (
       <div key={`icon-${icon.id}`} styleName="icon" style={style}>

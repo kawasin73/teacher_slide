@@ -7,6 +7,7 @@ const _Text = Record({
   top: null,
   addedTime: null,
   animationTime: null,
+  fontSize: 32,
 });
 
 var counter = 0;
@@ -24,6 +25,10 @@ function randomAnimation() {
   return Math.random() * 10 + 4;
 }
 
+function fontSize() {
+  return Math.random() * 16 + 32;
+}
+
 export default class Text extends _Text {
   static fromJS(text) {
     return (new this).merge({
@@ -32,6 +37,7 @@ export default class Text extends _Text {
       top: top(),
       addedTime: new Date($.now()),
       animationTime: randomAnimation(),
+      fontSize: fontSize(),
     });
   }
 

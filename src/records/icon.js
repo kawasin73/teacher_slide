@@ -7,6 +7,7 @@ const _Icon = Record({
   top: 0,
   addedTime: null,
   animationTime: null,
+  fontSize: 32,
 });
 
 var counter = 0;
@@ -24,6 +25,10 @@ function randomAnimation() {
   return Math.random() * 10 + 4;
 }
 
+function fontSize() {
+  return Math.random() * 16 + 32;
+}
+
 export default class Icon extends _Icon {
   static fromJS(value) {
     return (new this).merge({
@@ -32,6 +37,7 @@ export default class Icon extends _Icon {
       top: top(),
       addedTime: new Date($.now()),
       animationTime: randomAnimation(),
+      fontSize: fontSize(),
     });
   }
 
