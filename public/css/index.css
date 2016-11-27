@@ -1,0 +1,77 @@
+#header {
+/*  background-color: rgb(196,223,155);*/
+  background-image: url('../image/blackbord.jpg');
+  background-size: cover;
+  padding: 30px;
+  color: white;
+}
+
+.row .btn-area {
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 100%;
+}
+
+.morse-btn {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(196,223,155);
+  border: 2px dotted #2a82a3;
+  border-radius: 50%;
+  color: #2a82a3;
+  display: block;
+  transition: background-color 0.3s ease-in;
+  -webkit-transition: background-color 0.3s ease-in;
+  margin: 20px 45px;
+}
+.morse-btn:hover {
+  background: #ffc40d;
+  color: #FFF;
+  border: 2px dotted #FFF;
+}
+
+.morse-check {
+  overflow-x: hidden;
+  background-color: white;
+  margin: 20px 45px;
+  width: 930px;
+  height: 200px;
+}
+
+.m-check {
+  font-size: 50px;
+  line-height: 150px;
+}
+
+#pop{
+  margin-top: -70px;
+}
+
+@font-face {
+  font-family: 'KodomoRounded';
+  src: url('font/KodomoRounded.ttf') format('truetype'),
+       url('font/KodomoRounded.otf') format('opentype');
+}
+
+.title {
+  font-family: 'KodomoRounded';
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body {
+  background-color: #d7d7d7;
+/*  background-image: url("../image/bg.png");*/
+  background-repeat: no-repeat;
+}
+
+.layerTransparent{
+  background-color: rgba(255,255,255,0.5);
+  height: 200px;
+}
+
+.feeling-btn{
+  width:250px;
+  height:250px;
+}
