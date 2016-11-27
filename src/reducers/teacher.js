@@ -4,23 +4,25 @@ import { List } from 'immutable'
 import TeacherActions, {FilterType} from '../actions/teacher'
 
 function textQueue(state = new List(), action) {
+  let now = new Date($.now());
   switch (action.type) {
     case TeacherActions.RECEIVE_TEXT:
-      return state.push(action.text);
+      return state.filter((text) => text.isExpired(now)).push(action.text);
     default:
       break; // do nothing
   }
-  return state;
+  return state.filter((text) => text.isExpired(now));
 }
 
 function iconQueue(state = new List(), action) {
+  let now = new Date($.now());
   switch (action.type) {
     case TeacherActions.RECEIVE_ICON:
-      return state.push(action.value);
+      return state.filter((icon) => icon.inTime(now)).push(action.value);
     default:
       break; // do nothing
   }
-  return state
+  return state.filter((icon) => icon.inTime(now));
 }
 
 function enabledFlow(state = true, action) {
