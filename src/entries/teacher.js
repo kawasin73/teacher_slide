@@ -11,7 +11,7 @@ import 'babel-polyfill'
 import $ from '../lib/shims/jquery';
 
 import { startReceive } from '../lib/peer';
-import { receiveData, enableFlow } from '../actions/teacher';
+import { receiveData, enableFlow, changeFilterType, FilterType } from '../actions/teacher';
 
 import TeacherContainer from '../containers/TeacherContainer'
 import configureStore from '../stores/configureTeacherStore'
@@ -25,15 +25,35 @@ startReceive((data) => {
 
 let KEY1 = 49;
 let KEY2 = 50;
+let KEY3 = 51;
+let KEY4 = 52;
+let KEY5 = 53;
+let KEY6 = 54;
+let KEY0 = 48;
 
 $(document).ready(() => {
   $('body').keypress((e) => {
     switch (e.which) {
       case KEY1:
-        store.dispatch(enableFlow(true));
+        store.dispatch(changeFilterType(FilterType.ALL));
         return;
       case KEY2:
-        store.dispatch(enableFlow(false));
+        store.dispatch(changeFilterType(FilterType.TEXT));
+        return;
+      case KEY3:
+        store.dispatch(changeFilterType(FilterType.GOOD));
+        return;
+      case KEY4:
+        store.dispatch(changeFilterType(FilterType.BORING));
+        return;
+      case KEY5:
+        store.dispatch(changeFilterType(FilterType.UNDERSTAND));
+        return;
+      case KEY6:
+        store.dispatch(changeFilterType(FilterType.NO_UNDERSTAND));
+        return;
+      case KEY0:
+        store.dispatch(changeFilterType(FilterType.NONE));
         return;
       default:
         break; // do nothing
@@ -44,7 +64,7 @@ $(document).ready(() => {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={TeacherContainer}/>
+      <Route path="*" component={TeacherContainer}/>
     </Router>
   </Provider>,
   document.getElementById('content')

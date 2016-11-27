@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { List } from 'immutable'
 
-import TeacherActions from '../actions/teacher'
+import TeacherActions, {FilterType} from '../actions/teacher'
 
 function textQueue(state = new List(), action) {
   switch (action.type) {
@@ -33,8 +33,19 @@ function enabledFlow(state = true, action) {
   return state;
 }
 
+function filterType(state = FilterType.ALL, action) {
+  switch (action.type) {
+    case TeacherActions.FILTER_TYPE:
+      return action.filter;
+    default:
+      break; // do nothing
+  }
+  return state
+}
+
 export default combineReducers({
   textQueue,
   iconQueue,
   enabledFlow,
+  filterType,
 })

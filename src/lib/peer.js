@@ -1,7 +1,7 @@
 // import Peer from 'peerjs';
 import Peer from './shims/peer';
 
-let peerId = "test1";
+let peerId = "test2";
 let API_KEY = "e16bc721-d566-47ea-9de8-4a92bc8248c6"; // 悪用しないでね
 
 export function startReceive(callBack) {
