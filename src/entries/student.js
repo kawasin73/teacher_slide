@@ -17,6 +17,19 @@ $(document).ready(function () {
   var morseMess = '';
   var lastTime;
 
+  let KEY_ENTER = 13;
+
+  $('body').keypress((e) => {
+    switch (e.which) {
+      case KEY_ENTER:
+        let data = { type: 0, value: 1 };
+        console.log(data);
+        sendData(data);
+        return
+      default:
+        return
+    }
+  });
 
   $(window).on('keydown', keydown);
   $(window).on('keyup', keyup);
