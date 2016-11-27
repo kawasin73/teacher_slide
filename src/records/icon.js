@@ -38,4 +38,19 @@ export default class Icon extends _Icon {
   isExpired(date) {
     return date - this.addedTime < this.animationTime * 1000;
   }
+
+  text() {
+    switch (this.value) {
+      case '0':
+        return 'いいね';
+      case '1':
+        return 'つまらない';
+      case '2':
+        return 'わかる';
+      case '3':
+        return 'わからない';
+      default:
+        return '';
+    }
+  }
 }

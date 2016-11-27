@@ -48,7 +48,7 @@ class Cambus extends Component {
     };
     return (
       <div key={`icon-${icon.id}`} styleName="icon" style={style}>
-        {icon.value}
+        {icon.text()}
       </div>
     );
   }
