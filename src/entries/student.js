@@ -25,11 +25,11 @@ $(document).ready(function () {
   $('#morse').mouseup(keyup);
 
   function registerOnFinish() {
-    lastTime = new Date(jQuery.now());
+    lastTime = new Date($.now());
     var keepLastTime = lastTime;
 
     function reset() {
-      if (lastTime == keepLastTime) {
+      if (lastTime === keepLastTime) {
         console.log(morseMess);
         send(morseMess);
         morseMess = '';
@@ -39,12 +39,13 @@ $(document).ready(function () {
     }
 
     function space() {
-      if (lastTime == keepLastTime) {
+      if (lastTime === keepLastTime) {
         morseMess = morseMess + ' ';
+        $('.morse-check').prepend('<sapn class="m-check"> </span>');
       }
     }
 
-    setTimeout(space, 600);
+    setTimeout(space, 400);
     setTimeout(reset, 2000);
   }
 
@@ -58,12 +59,13 @@ $(document).ready(function () {
   }
 
   function keydown() {
-    start = new Date(jQuery.now());
+    start = new Date($.now());
   }
 
   function keyup() {
-    let stop = new Date(jQuery.now());
+    let stop = new Date($.now());
     let check = stop - start;
+    console.log('check time:', check);
     if (check < 80) {
       morseMess = morseMess + '.';
       $('.morse-check').prepend('<sapn class="m-check">.</span>');
