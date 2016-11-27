@@ -9,8 +9,8 @@
 .row .btn-area {
   margin-left: auto;
   margin-right: auto;
-  height: 250px;
-  width: 65%;
+  height: 300px;
+  width: 100%;
 }
 
 .morse-btn {
@@ -23,12 +23,25 @@
   display: block;
   transition: background-color 0.3s ease-in;
   -webkit-transition: background-color 0.3s ease-in;
-  margin: 10px;
+  margin: 20px 45px;
 }
 .morse-btn:hover {
   background: #ffc40d;
   color: #FFF;
   border: 2px dotted #FFF;
+}
+
+.morse-check {
+  overflow-x: hidden;
+  background-color: white;
+  margin: 20px 45px;
+  width: 930px;
+  height: 200px;
+}
+
+.m-check {
+  font-size: 50px;
+  line-height: 150px;
 }
 
 #pop{
@@ -54,12 +67,11 @@ body {
 }
 
 .layerTransparent{
-  background-color:   rgba(255,255,255,0.5);
-  height:         200px;
+  background-color: rgba(255,255,255,0.5);
+  height: 200px;
 }
 
 .feeling-btn{
-  width:200px; 
-  height:200px; 
-  margin: 10px;
+  width:250px;
+  height:250px;
 }

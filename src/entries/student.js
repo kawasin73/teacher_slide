@@ -34,6 +34,7 @@ $(document).ready(function () {
         send(morseMess);
         morseMess = '';
         lastTime = 0;
+        $('.morse-check').empty();
       }
     }
 
@@ -65,10 +66,10 @@ $(document).ready(function () {
     let check = stop - start;
     if (check < 80) {
       morseMess = morseMess + '.';
-      $('#morse-area').prepend('<sapn class="morse-check">.</span>');
+      $('.morse-check').prepend('<sapn class="m-check">.</span>');
     } else {
       morseMess = morseMess + '-';
-      $('#morse-area').prepend('<sapn class="morse-check">-</span>');
+      $('.morse-check').prepend('<sapn class="m-check">-</span>');
     }
     //console.log(morse);
     registerOnFinish();

@@ -42,44 +42,43 @@
     </div>
 
     <div class="row">
-      <div class="btn-area">
-        <div class="col-md-3 col-xs-6 feeling-btn" align="center">
-          <button type="button" class="btn btn-primary feeling-btn" id="btn1" value=0 onclick="countUpGood();">
-            <img src="image/good.png" width="70%" height="70%"><br>
-            <span id="good" style="margin-left: 10px;">0</span> いいね
-          </button>
-        </div>
-        <div class="col-md-3 col-xs-6 feeling-btn" align="center">
-          <button type="button" class="btn btn-success feeling-btn" id="btn2" value=1 onclick="countUpTsumaranai();">
-            <img src="image/tsumaranai.png" width="70%" height="70%"><br>
-            <span id="tsumaranai" style="margin-left: 10px;">0</span> つまらない
-          </button>
-        </div>
-        <div class="col-md-3 col-xs-6 feeling-btn" align="center">
-          <button type="button" class="btn btn-info feeling-btn" id="btn3" value=2 onclick="countUpWakaru();">
-            <img src="image/wakaru.png" width="70%" height="70%"><br>
-            <span id="wakaru" style="margin-left: 10px;">0</span> わかる
-          </button>
-        </div>
-        <div class="col-md-3 col-xs-6 feeling-btn" align="center">
-          <button type="button" class="btn btn-warning feeling-btn" id="btn4" value=3 onclick="countUpWakaranai();">
-            <img src="image/wakaranai.png" width="70%" height="70%"><br>
-            <span id="wakaranai" style="margin-left: 10px;">0</span> わからない
-          </button>
-        </div>
+      <div class="col-md-3 col-xs-6 " align="center">
+        <button type="button" class="btn btn-primary feeling-btn" id="btn1" value=0 onclick="countUpGood();">
+          <img src="image/good.png" width="70%" height="70%"><br>
+          <span id="good" style="margin-left: 10px;">0</span> いいね
+        </button>
       </div>
-    </div>
-
-    <div class="row" id="morse-area">
-      <div align="left">
-        <button class="morse-btn" id="morse">
-          <img src="image/morse.png" width="70%" height="70%">
+      <div class="col-md-3 col-xs-6" align="center">
+        <button type="button" class="btn btn-success feeling-btn" id="btn2" value=1 onclick="countUpTsumaranai();">
+          <img src="image/tsumaranai.png" width="70%" height="70%"><br>
+          <span id="tsumaranai" style="margin-left: 10px;">0</span> つまらない
+        </button>
+      </div>
+      <div class="col-md-3 col-xs-6" align="center">
+        <button type="button" class="btn btn-info feeling-btn" id="btn3" value=2 onclick="countUpWakaru();">
+          <img src="image/wakaru.png" width="70%" height="70%"><br>
+          <span id="wakaru" style="margin-left: 10px;">0</span> わかる
+        </button>
+      </div>
+      <div class="col-md-3 col-xs-6" align="center">
+        <button type="button" class="btn btn-warning feeling-btn" id="btn4" value=3 onclick="countUpWakaranai();">
+          <img src="image/wakaranai.png" width="70%" height="70%"><br>
+          <span id="wakaranai" style="margin-left: 10px;">0</span> わからない
         </button>
       </div>
     </div>
     
+    <div class="col-md-3 morse-btn-area">
+      <button class="morse-btn" id="morse">
+        <img src="image/morse.png" width="70%" height="70%">
+      </button>
+    </div>
+    <div class="col-md-3 morse-check">
+      
+    </div>
     
-    <div id="footer" style="background:blue; color:white;" align="center">Copyright &copy; 2016 Team f*ckin All Rights Reserved.</div>
+    
+    <!--div id="footer" style="background:blue; color:white;" align="center">Copyright &copy; 2016 Team f*ckin All Rights Reserved.</div-->
     
     <script src="http://localhost:8080/assets/build/student.js"></script>
   </body>
