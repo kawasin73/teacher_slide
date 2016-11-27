@@ -46,7 +46,7 @@ export default class Icon extends _Icon {
   }
 
   inTime(date) {
-    return date - this.addedTime < 60 * 1000;
+    return date - this.addedTime < 20 * 1000;
   }
 
   text() {
