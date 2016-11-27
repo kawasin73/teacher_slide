@@ -4,7 +4,7 @@ import { sendData } from '../lib/peer';
 
 $(document).ready(function () {
 
-  $('.button').click(function (e) {
+  $('.btn').click(function (e) {
     var btn_id = $(this).attr('id');
     var val = $('#' + btn_id).val();
     var data = { type: 0, value: val };
@@ -20,6 +20,9 @@ $(document).ready(function () {
 
   $(window).on('keydown', keydown);
   $(window).on('keyup', keyup);
+
+  $('#morse').mousedown(keydown);
+  $('#morse').mouseup(keyup);
 
   function registerOnFinish() {
     lastTime = new Date(jQuery.now());
@@ -62,8 +65,10 @@ $(document).ready(function () {
     let check = stop - start;
     if (check < 80) {
       morseMess = morseMess + '.';
+      $('#morse-area').prepend('<sapn class="morse-check">.</span>');
     } else {
       morseMess = morseMess + '-';
+      $('#morse-area').prepend('<sapn class="morse-check">-</span>');
     }
     //console.log(morse);
     registerOnFinish();

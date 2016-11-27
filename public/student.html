@@ -1,24 +1,86 @@
-<!doctype html>
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://skyway.io/dist/0.3/peer.min.js"></script>
-<body>
-<button type="button" name="test" class="button" id="btn1" value=1>
-    いいね
-</button>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://skyway.io/dist/0.3/peer.min.js"></script>
+    <title>せんせいじゅぎょうがわかりません！</title>
 
-<button type="button" name="test" class="button" id="btn2" value=2>
-    わかる
-</button>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 
-<button type="button" name="test" class="button" id="btn3" value=0>
-    わからない
-</button>
+    <script type="text/javascript" src="js/index.js"></script>
+  </head>
+  <script type="text/javascript">
+    var $countGood = 0;
+    var $countTsumaranai = 0;
+    var $countWakaru = 0;
+    var $countWakaranai = 0;
+    function countUpGood() {
+        document.getElementById( "good" ).innerHTML = ++$countGood;
+    }
+    function countUpTsumaranai() {
+        document.getElementById( "tsumaranai" ).innerHTML = ++$countTsumaranai;
+    }
+    function countUpWakaru() {
+        document.getElementById( "wakaru" ).innerHTML = ++$countWakaru;
+    }
+    function countUpWakaranai() {
+        document.getElementById( "wakaranai" ).innerHTML = ++$countWakaranai;
+    }
+  </script>
+  
+  <body>
 
-<button type="button" name="test" class="button" id="btn4" value=3>
-    帰りたい
-</button>
-<script src="http://localhost:8080/assets/build/student.js"></script>
-</body>
+    <div id="header">
+      <h1 class="title">せんせいじゅぎょうがわかりません！</h1>
+      <img width="10%" heigth="10%" align="right" id="pop" src="image/cleaner.png" />
+    </div>
+
+    <div class="row">
+      <div class="btn-area">
+        <div class="col-md-3 col-xs-6 feeling-btn" align="center">
+          <button type="button" class="btn btn-primary feeling-btn" id="btn1" value=0 onclick="countUpGood();">
+            <img src="image/good.png" width="70%" height="70%"><br>
+            <span id="good" style="margin-left: 10px;">0</span> いいね
+          </button>
+        </div>
+        <div class="col-md-3 col-xs-6 feeling-btn" align="center">
+          <button type="button" class="btn btn-success feeling-btn" id="btn2" value=1 onclick="countUpTsumaranai();">
+            <img src="image/tsumaranai.png" width="70%" height="70%"><br>
+            <span id="tsumaranai" style="margin-left: 10px;">0</span> つまらない
+          </button>
+        </div>
+        <div class="col-md-3 col-xs-6 feeling-btn" align="center">
+          <button type="button" class="btn btn-info feeling-btn" id="btn3" value=2 onclick="countUpWakaru();">
+            <img src="image/wakaru.png" width="70%" height="70%"><br>
+            <span id="wakaru" style="margin-left: 10px;">0</span> わかる
+          </button>
+        </div>
+        <div class="col-md-3 col-xs-6 feeling-btn" align="center">
+          <button type="button" class="btn btn-warning feeling-btn" id="btn4" value=3 onclick="countUpWakaranai();">
+            <img src="image/wakaranai.png" width="70%" height="70%"><br>
+            <span id="wakaranai" style="margin-left: 10px;">0</span> わからない
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="morse-area">
+      <div align="left">
+        <button class="morse-btn" id="morse">
+          <img src="image/morse.png" width="70%" height="70%">
+        </button>
+      </div>
+    </div>
+    
+    
+    <div id="footer" style="background:blue; color:white;" align="center">Copyright &copy; 2016 Team f*ckin All Rights Reserved.</div>
+    
+    <script src="http://localhost:8080/assets/build/student.js"></script>
+  </body>
 </html>
